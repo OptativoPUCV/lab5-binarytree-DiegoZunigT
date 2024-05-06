@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #include "treemap.h"
 
 typedef struct TreeNode TreeNode;
@@ -36,7 +37,8 @@ TreeNode * createTreeNode(void* key, void * value) {
     return new;
 }
 
-TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
+TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) 
+{
     TreeMap *newMap = (TreeMap *) malloc (sizeof(TreeMap));
     if(!newMap) exit(EXIT_FAILURE);
     newMap->root = NULL;
@@ -48,13 +50,28 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) 
 {
-
+    TreeNode *node = createTreeNode(key, value);
+    if((!tree) || (!tree->root)) {
+        tree->root = node;
+        tree->current = node;
+    }
+    TreeNode *aux = tree->root;
+    while(true) {
+        if(aux->pair->key == key) return;
+        if(aux->left->pair->key < aux->pair->key) {
+            if(aux->right) aux = aux->right;
+            else aux->right = node;
+        } else {
+            if(aux->left) aux = aux->left;
+            else aux->left = node;
+        }
+    }
 }
 
 TreeNode * minimum(TreeNode * x)
 {
     TreeNode *aux = x;
-    while(1) {
+    while(true) {
         if(aux->left) aux = aux->left;
         else break;
     }
