@@ -54,6 +54,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
     if((!tree) || (!tree->root)) {
         tree->root = node;
         tree->current = node;
+        return;
     }
     TreeNode *aux = tree->root;
     while(true) {
