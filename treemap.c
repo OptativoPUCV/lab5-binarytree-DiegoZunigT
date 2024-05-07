@@ -116,7 +116,7 @@ Pair * firstTreeMap(TreeMap * tree)
 
 Pair * nextTreeMap(TreeMap * tree) 
 {
-    TreeNode *nextAux = tree->current;
+    //TreeNode *nextAux = tree->current;
     
     return NULL;
 }

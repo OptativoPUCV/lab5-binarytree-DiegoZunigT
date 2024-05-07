@@ -59,3 +59,8 @@ treemap.c:119:15: error: unused variable ‘nextAux’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 5f05877
+Tue 07 May 2024 03:57:01 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+d15ad2b
