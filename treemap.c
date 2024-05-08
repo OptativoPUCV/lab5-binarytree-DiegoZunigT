@@ -122,7 +122,7 @@ Pair * firstTreeMap(TreeMap * tree)
 
 Pair * nextTreeMap(TreeMap * tree) 
 {
-    if(tree == NULL) return NULL;
+    if(tree->current == NULL) return NULL;
     TreeNode *nextAux = tree->current;
     if(nextAux == tree->root) {
         if(nextAux->right) {
