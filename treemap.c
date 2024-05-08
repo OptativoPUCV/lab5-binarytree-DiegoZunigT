@@ -129,8 +129,9 @@ Pair * nextTreeMap(TreeMap * tree)
             nextAux = minimum(nextAux->right);
             tree->current = nextAux;
             return tree->current->pair;
+        } else {
+            return NULL;
         }
-        return NULL;
     }
     if(!nextAux->right) {
         nextAux = nextAux->parent;
