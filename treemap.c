@@ -130,6 +130,7 @@ Pair * nextTreeMap(TreeMap * tree)
             tree->current = nextAux;
             return tree->current->pair;
         }
+        return NULL;
     }
     if(!nextAux->right) {
         nextAux = nextAux->parent;
