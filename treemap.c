@@ -73,25 +73,11 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
             }
         }
     }
-    /*while(true) {
-        if(aux->pair->key == key) return;
-        if(aux->left && aux->left->pair->key <= key && aux->pair->key ) {
-            if(aux->right) aux = aux->right;
-            else aux->right = node;
-        } else  {
-            if(aux->left) aux = aux->left;
-            else aux->left = node;
-        }
-    }*/
 }
 
 TreeNode * minimum(TreeNode * x)
 {
     TreeNode *aux = x;
-    /*while(aux) {
-        if(aux->left) aux = aux->left;
-        else break;
-    }*/
     while(aux->left) {
         aux = aux->left;
     }
@@ -136,7 +122,19 @@ Pair * firstTreeMap(TreeMap * tree)
 
 Pair * nextTreeMap(TreeMap * tree) 
 {
-    //TreeNode *nextAux = tree->current;
+    TreeNode *nextAux = tree->current;
+    if(nextAux == tree->root) {
+        if(nextAux->right) {
+            nextAux = nextAux->right;
+            tree->current = nextAux;
+            return tree->current->pair;
+        }
+    }
+    if(!nextAux->right) {
+        nextAux = nextAux->parent;
+        tree->current = nextAux;
+        return tree->current->pair;
+    }
     
     return NULL;
 }
