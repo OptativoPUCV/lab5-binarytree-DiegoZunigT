@@ -125,7 +125,7 @@ Pair * nextTreeMap(TreeMap * tree)
     TreeNode *nextAux = tree->current;
     if(nextAux == tree->root) {
         if(nextAux->right) {
-            nextAux = nextAux->right;
+            nextAux = minimum(nextAux->right);
             tree->current = nextAux;
             return tree->current->pair;
         }
