@@ -131,6 +131,7 @@ Pair * nextTreeMap(TreeMap * tree)
     } else if(next->right == NULL) {
         TreeNode *temp = next;
         while(next->parent) {
+            temp = next;
             next = next->parent;
             if(next->left == temp) {
                 tree->current = next;
