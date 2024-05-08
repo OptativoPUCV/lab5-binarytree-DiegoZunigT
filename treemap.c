@@ -135,6 +135,11 @@ Pair * nextTreeMap(TreeMap * tree)
         tree->current = nextAux;
         return tree->current->pair;
     }
+    if(nextAux->right) {
+        nextAux = minimum(nextAux->right);
+        tree->current = nextAux;
+        return tree->current->pair;
+    }
     
     return NULL;
 }
