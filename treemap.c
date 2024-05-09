@@ -105,7 +105,8 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 Pair * searchTreeMap(TreeMap * tree, void* key) 
 {
-    //if(!tree->root) return NULL;
+    int *numaux = key;
+    printf("%d\n", *numaux);
     TreeNode *aux = tree->root;
     while(aux != NULL) {
         int *num = aux->pair->key;
@@ -120,7 +121,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
         } else {
             printf("L\n");
             aux = aux->left;
-        }
+        }-
     }
     printf("\n\n");
     return NULL;
