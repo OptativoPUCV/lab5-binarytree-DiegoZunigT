@@ -106,11 +106,11 @@ void eraseTreeMap(TreeMap * tree, void* key){
 Pair * searchTreeMap(TreeMap * tree, void* key) 
 {
     int *numaux = key;
-    printf("%d\n", *numaux);
+    
     TreeNode *aux = tree->root;
     while(aux != NULL) {
         int *num = aux->pair->key;
-        printf("%d\n", *num);
+        printf("%d ? %d\n", *num, *numaux);
         if(is_equal(tree, aux->pair->key, key)) {
             tree->current = aux;
             printf("\n\n");
