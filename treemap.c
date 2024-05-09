@@ -108,6 +108,8 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
     //if(!tree->root) return NULL;
     TreeNode *aux = tree->root;
     while(aux != NULL) {
+        int *num = aux->pair->key;
+        printf("%d\n", *num);
         if(is_equal(tree, aux->pair->key, key)) {
             tree->current = aux;
             return tree->current->pair;
