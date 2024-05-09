@@ -283,3 +283,17 @@ Thu 09 May 2024 02:46:01 AM UTC:
  tests:  17|4
 total_score: 25/70
 7f07b4b
+Thu 09 May 2024 02:47:23 AM UTC: 
+ treemap.c | 7 +------
+ 1 file changed, 1 insertion(+), 6 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:111:14: error: unused variable ‘num’ [-Werror=unused-variable]
+  111 |         int *num = aux->pair->key;
+      |              ^~~
+treemap.c:108:10: error: unused variable ‘numaux’ [-Werror=unused-variable]
+  108 |     int *numaux = key;
+      |          ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+dfadb08
