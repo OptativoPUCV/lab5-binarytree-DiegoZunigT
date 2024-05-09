@@ -109,21 +109,21 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
     TreeNode *aux = tree->root;
     while(aux != NULL) {
         int *num = aux->pair->key;
-        printf("%d ? %d\n", *num, *numaux);
+        if(aux->pair->key < key) {
+            printf("%d < %d\n", *num, *numaux);
+        } else if(aux->pair->key > key) {
+            printf("%d > %d\n", *num, *numaux);
+        }
         if(is_equal(tree, aux->pair->key, key)) {
             tree->current = aux;
-            printf("\n\n");
             return tree->current->pair;
         } else if(key < aux->pair->key) {
-            printf("L\n");
             aux = aux->left;
         } else if(aux->pair->key < key) {
-            printf("R\n");
             aux = aux->right;
             
         }
     }
-    printf("\n\n");
     return NULL;
 }
 
