@@ -115,12 +115,13 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
             tree->current = aux;
             printf("\n\n");
             return tree->current->pair;
-        } else if(aux->pair->key < key) {
-            printf("R\n");
-            aux = aux->right;
-        } else {
+        } else if(aux->pair->key > key) {
             printf("L\n");
             aux = aux->left;
+        } else {
+            printf("R\n");
+            aux = aux->right;
+            
         }
     }
     printf("\n\n");
