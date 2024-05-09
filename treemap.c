@@ -58,7 +58,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
     }
     TreeNode *aux = tree->root;
     while(true) {
-        if(aux->pair->key == key) return;
+        if(is_equal(tree, aux->pair->key, key)) return;
         if(aux->pair->key > key) {
             if(aux->left) aux = aux->left;
             else {
@@ -107,14 +107,20 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
 {
     if(!tree->root) return NULL;
     TreeNode *aux = tree->root;
-    while(aux != NULL && aux->pair->key != key) {
-        if(aux->pair->key > key) aux = aux->left;
-        else aux = aux->right;
+    while(aux) {
+        if(is_equal(tree, aux->pair->key, key)) {
+            tree->current = aux;
+            return tree->current->pair;
+        } else if(aux->pair->key < key) {
+            aux = aux->right;
+        } else {
+            aux = aux->left;
+        }
     }
-    if(aux) {
+    /*if(aux) {
         tree->current = aux;
         return tree->current->pair;
-    } 
+    } */
     return NULL;
 }
 
