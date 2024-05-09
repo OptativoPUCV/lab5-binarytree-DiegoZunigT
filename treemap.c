@@ -118,7 +118,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
         } else if(aux->pair->key > key) {
             printf("L\n");
             aux = aux->left;
-        } else {
+        } else if(aux->pair->key < key) {
             printf("R\n");
             aux = aux->right;
             
