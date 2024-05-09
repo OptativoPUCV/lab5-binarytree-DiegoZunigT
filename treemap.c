@@ -139,27 +139,6 @@ Pair * nextTreeMap(TreeMap * tree)
             } 
         }
         return NULL;
-        
     }
-    /*if(nextAux == tree->root) {
-        if(nextAux->right) {
-            nextAux = minimum(nextAux->right);
-            tree->current = nextAux;
-            return tree->current->pair;
-        } else {
-            return NULL;
-        }
-    }
-    if(!nextAux->right) {
-        nextAux = nextAux->parent;
-        tree->current = nextAux;
-        return tree->current->pair;
-    }
-    if(nextAux->right) {
-        nextAux = minimum(nextAux->right);
-        tree->current = nextAux;
-        return tree->current->pair;
-    }*/
-    
     return NULL;
 }
