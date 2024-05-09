@@ -297,3 +297,9 @@ treemap.c:108:10: error: unused variable ‘numaux’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 dfadb08
+Thu 09 May 2024 02:47:36 AM UTC: 
+ treemap.c | 2 --
+ 1 file changed, 2 deletions(-)
+ tests:  17|4
+total_score: 25/70
+a50f26c
