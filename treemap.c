@@ -64,12 +64,14 @@ void insertTreeMap(TreeMap * tree, void* key, void * value)
             else {
                 aux->left = node;
                 tree->current = node;
+                return;
             }
         } else {
             if(aux->right) aux = aux->right;
             else {
                 aux->right = node;
                 tree->current = node;
+                return;
             }
         }
     }
