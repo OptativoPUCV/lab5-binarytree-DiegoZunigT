@@ -157,6 +157,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     //if(pair) return pair;
     TreeNode *aux = tree->root;
     TreeNode *temp = aux;
+    printf("%s - %s\n", (char *) temp->pair->key, (char *)key);
     while(aux) {
         temp = aux;
         if(is_equal(tree, aux->pair->key, key)) {
