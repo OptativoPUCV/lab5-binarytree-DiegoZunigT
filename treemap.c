@@ -158,7 +158,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     TreeNode *aux = tree->root;
     TreeNode *temp = aux;
     //int *ent = temp->pair->key;
-    printf("%d - %d\n", *(int *) temp->pair->key, *(int *) key);
+    //printf("%d - %d\n", *(int *) temp->pair->key, *(int *) key);
     while(aux) {
         temp = aux;
         printf("%d - %d\n", *(int *) temp->pair->key, *(int *)aux->pair->key);
@@ -171,7 +171,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
             aux = aux->right;
         }
     }
-    printf("%d - %d\n", *(int *) temp->pair->key, *(int *)key);
+    //printf("%d - %d\n", *(int *) temp->pair->key, *(int *)key);
     if(is_equal(tree, temp->pair->key, key)) printf("Es igual");
     if(temp == tree->root || temp->right) {
         temp = minimum(temp->right);
