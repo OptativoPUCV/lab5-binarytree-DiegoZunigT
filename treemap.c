@@ -172,7 +172,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         }
     }
     printf("{%d - %d}\n", *(int *) temp->pair->key, *(int *)key);
-    if(tree->lower_than(key, temp->pair->key)) printf("Es menor");
+    if(tree->lower_than(key, temp->pair->key)) return temp->pair;
     if(temp == tree->root || temp->right) {
         temp = minimum(temp->right);
         tree->current = temp;
