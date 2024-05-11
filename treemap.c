@@ -101,12 +101,14 @@ void removeNode(TreeMap * tree, TreeNode* node)
             } else {
                 aux->left = node->right;
             }
+            tree->current = aux->left;
         } else {
             if(node->left) {
                 aux->right = node->left;
             } else {
                 aux->right = node->right;
             }
+            tree->current = aux->right;
         }
     }
 }
