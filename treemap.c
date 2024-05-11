@@ -156,9 +156,10 @@ Pair * upperBound(TreeMap * tree, void* key) {
     //Pair *pair = searchTreeMap(tree, key);
     //if(pair) return pair;
     TreeNode *aux = tree->root;
-    TreeNode *temp = aux;
+    //TreeNode *temp = aux;
     while(aux) {
-        temp = aux;
+        //temp = aux;
+        tree->current = aux;
         if(is_equal(tree, aux->pair->key, key)) {
             tree->current = aux;
             return tree->current->pair;
@@ -169,7 +170,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         }
     }
     
-    return temp->pair;
+    return nextTreeMap(tree);
 }
 
 Pair * firstTreeMap(TreeMap * tree) 
