@@ -153,6 +153,8 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
+    Pair *pair = searchTreeMap(tree, key);
+    if(pair) return pair;
     return NULL;
 }
 
