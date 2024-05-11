@@ -95,22 +95,36 @@ void removeNode(TreeMap * tree, TreeNode* node)
         }
     } else if((!node->left && node->right) || (node->left && !node->right)) {
         if(is_equal(tree, parent->left->pair->key, node->pair->key)) {
-            if(node->left) {
+            /*if(node->left) {
                 parent->left = node->left;
                 node->left->parent = parent;
             } else {
                 parent->left = node->right;
                 node->right->parent = parent;
+            }*/
+            if(node->left) {
+                node = node->left;
+            } else {
+                node = node->right;
             }
+            parent->left = node;
+            node->parent = parent;
             //tree->current = aux->left;
         } else {
-            if(node->left) {
+            /*if(node->left) {
                 parent->right = node->left;
                 node->left->parent = parent;
             } else {
                 parent->right = node->right;
                 node->right->parent = parent;
+            }*/
+            if(node->left) {
+                node = node->left;
+            } else {
+                node = node->right;
             }
+            parent->right = node;
+            node->parent = parent;
             //tree->current = aux->right;
         }
     }
