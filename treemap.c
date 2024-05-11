@@ -108,7 +108,18 @@ void removeNode(TreeMap * tree, TreeNode* node)
             node->parent = aux;
         }
     } else {
-        printf("Miau :3");
+        while(aux) {
+            if(aux->left) aux = aux->left;
+            else break;
+        }
+        if(node->left) {
+            node->left->parent = aux;
+            aux->left = node->left;
+        }
+        node->right->parent = aux;
+        aux->right = node->right;
+        node = aux;
+        aux = NULL;
     }
 }
 
