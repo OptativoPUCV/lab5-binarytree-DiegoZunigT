@@ -169,7 +169,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
             aux = aux->right;
         }
     }
-    
+    if(is_equal(tree, tree->current->pair->key, key)) return tree->current->pair;
     return nextTreeMap(tree);
 }
 
