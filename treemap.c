@@ -148,7 +148,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
             aux = aux->right;
         }
     }
-    return NULL;
+    return aux->pair;
 }
 
 
