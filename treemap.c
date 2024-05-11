@@ -159,7 +159,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     //TreeNode *temp = aux;
     while(aux) {
         tree->current = aux;
-        aux->right;
+        aux = aux->right;
     }
     return NULL;
 }
