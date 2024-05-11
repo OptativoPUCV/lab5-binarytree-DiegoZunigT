@@ -168,7 +168,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
             aux = aux->right;
         }
     }
-    return NULL;
+    
+    return temp->pair;
 }
 
 Pair * firstTreeMap(TreeMap * tree) 
