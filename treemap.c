@@ -170,7 +170,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         }
     }
     if(tree->lower_than(key, temp->pair->key)) return temp->pair;
-    /*if(temp == tree->root || temp->right) {
+    if(temp == tree->root || temp->right) {
         temp = minimum(temp->right);
         tree->current = temp;
         return tree->current->pair;
@@ -185,7 +185,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
             } 
         }
         return NULL;
-    }*/
+    }
     return NULL;
 }
 
